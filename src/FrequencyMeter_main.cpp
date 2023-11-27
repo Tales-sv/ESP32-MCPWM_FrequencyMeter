@@ -13,8 +13,6 @@ uint32_t cap_count= 0;  //cycles between cap interrupts
 uint32_t last_count= 0; //last cap_count value
 uint32_t cap_calc= 0;   //calculated frequency
 
-extern mcpwm_dev_t MCPWM0;
-
 bool cap_ISR_cb(mcpwm_unit_t mcpwm, mcpwm_capture_channel_id_t cap_channel, const cap_event_data_t *edata,void *user_data){ //this function need to be in that format to be recognized as cap_isr_cb_t type
 
 // cap_count = (uint32_t) edata->cap_value; //same as mcpwm_capture_signal_get_value()
