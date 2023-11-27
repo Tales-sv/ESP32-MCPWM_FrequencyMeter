@@ -26,11 +26,11 @@ last_count = cap_count;
 
 digitalWrite(2,HIGH); //sinalize an interrupt call
 
-return 0; //return no error
+return 0; //Whether a task switch is needed after the callback function returns, this is usually due to the callback wakes up some high priority task.
 
 }
 
-mcpwm_capture_config_t MCPWM_cap_config = { //Capture cannel configuration
+mcpwm_capture_config_t MCPWM_cap_config = { //Capture channel configuration
   .cap_edge = MCPWM_POS_EDGE,               /*!<Set capture edge*/
   .cap_prescale = 1,                        /*!<Prescale of capture signal, ranging from 1 to 256 */
   .capture_cb = cap_ISR_cb,                 /*!<User defined capture event callback, running under interrupt context */
