@@ -50,18 +50,18 @@ void setup(){
   ESP_ERROR_CHECK(mcpwm_capture_enable_channel(MCPWM_UNIT_0, MCPWM_SELECT_CAP0, &MCPWM_cap_config)); //enable and config capture channel. Inside an ESP_ERROR_CHECK() to avoid trouble
 
   Serial.println("end setup().");
-}//fim setup()
 
-void loop(){ //loop time (without delay()): < 200us
+}//end setup()
+
+void loop(){
   // Serial.print(esp_timer_get_time()); //get the measurement time in ms 
 
   Serial.print("  frequency: ");
-  Serial.print(cap_calc); // print the frequency in Hz
+  Serial.print(cap_calc); // print the frequency in Hz with less than 0,5% of error
 
   Serial.println("hz");
 
   digitalWrite(2,LOW);  // built in led sinalize an interrupt call
   delay(50);
-}// fim loop()
 
-//relatorio: funcional, erro instavel de +- 0,2% (na faixa de 20khz -> em média +- 3hz)
+}//end loop()
